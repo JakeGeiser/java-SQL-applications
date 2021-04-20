@@ -1,3 +1,6 @@
+# Config java file for sensitive info
+Config.java
+
 # Compiled class file
 *.class
 
