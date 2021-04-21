@@ -11,15 +11,16 @@ public class DbConnector {
 	private String user = "postgres";
 	private Config config = new Config(); // pull password from other file
 	private String password = config.password();
-	public void showpword() {
-		System.out.println(password);
-	}
+	
 	
 	// connect method
-	private static Connection con = null;
+	private static Connection con;
 	public Connection connect() {
 		try {
 			System.out.println("Connecting...");
+//			System.out.println(url);
+//			System.out.println(user);
+//			System.out.println(password);
 			con = DriverManager.getConnection(url,user,password);
 			System.out.println("Connected");
 			return con;

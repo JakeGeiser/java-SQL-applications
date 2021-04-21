@@ -6,6 +6,9 @@ public class DbManager {
 	// determines what query to execute
 	// call QueryExecute
 	// build result from results of QueryExe
+	public static void main(String[] args) {
+		
+	}
 	QueryExe query = new QueryExe();
 	
 	public ArrayList<Employee> featureSearch(String name){
@@ -74,6 +77,10 @@ public class DbManager {
 		}
 	}
 	
+	public void disconnect() {
+		DbConnector dbc = new DbConnector();
+		dbc.disconnect();
+	}
 	
 }
 

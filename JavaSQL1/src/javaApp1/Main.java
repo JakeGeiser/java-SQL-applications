@@ -65,6 +65,7 @@ public class Main {
 					}
 					else {
 						proceed0 = false;
+						manager.disconnect();
 						break;
 					}
 				}
@@ -109,6 +110,7 @@ public class Main {
 					}
 					else {
 						proceed0 = false;
+						manager.disconnect();
 						break;
 					}
 				}
@@ -136,6 +138,7 @@ public class Main {
 				}
 				else {
 					proceed0 = false;
+					manager.disconnect();
 					break;
 				}
 				
@@ -143,9 +146,6 @@ public class Main {
 			
 			
 		}
-		
-		
-		
 		
 		
 		
