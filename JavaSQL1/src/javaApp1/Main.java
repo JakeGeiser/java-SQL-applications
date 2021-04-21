@@ -69,6 +69,42 @@ public class Main {
 			}
 			
 			while(feature==2) {
+				// get input
+				System.out.println("Enter field: ");
+				String fieldIn = scan.nextLine();
+				System.out.println("Enter "+fieldIn+": ");
+				String titleIn = scan.nextLine();
+				// use feature search
+				ArrayList<Employee> employees = manager.featureFilter(fieldIn, titleIn);
+				// print out employees
+				System.out.println("");
+				System.out.println("ID | Name (age) | Department | Role | Salary");
+				for( Employee e : employees) {
+					System.out.println(e.getID()+ " | "
+										+ e.getName() + " ("
+										+ e.getAge() + ") | "
+										+ e.getDepartment() + " | "
+										+ e.getRole() + " | "
+										+ e.getSalary());
+				}
+				
+				System.out.println("");
+				System.out.println("Use feature 2 again? (yes/no): ");
+				if (scan.nextLine().equals("yes")) {
+					System.out.println("Using feature 2 again...");
+					System.out.println("");
+					continue;
+				}
+				else {
+					System.out.println("Would you like to use a different feature?");
+					if (scan.nextLine().equals("yes")) {
+						
+					}
+					else {
+						proceed0 = false;
+						break;
+					}
+				}
 				
 			}
 			if(feature==3) {
