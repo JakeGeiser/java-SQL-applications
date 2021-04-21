@@ -108,8 +108,28 @@ public class Main {
 				
 			}
 			if(feature==3) {
-	
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				System.out.println("");
+				System.out.println("Would you like to use a different feature?");
+				if (scan.nextLine().equals("yes")) {
+					
+				}
+				else {
+					proceed0 = false;
+					break;
+				}
+				
 			}
+			
+			
 		}
 		
 		
