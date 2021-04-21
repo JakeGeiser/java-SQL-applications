@@ -5,5 +5,4 @@ public class DbManager {
 	// determines what query to execute
 	// call QueryExecute
 	// build result from results of QueryExecute
-	DbConnector dbC = new DbConnector();
 }

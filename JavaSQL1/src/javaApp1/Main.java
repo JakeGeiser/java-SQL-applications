@@ -4,8 +4,7 @@ public class Main {
 	// interact to get input 
 	// call manager class
 	public static void main(String[] args) {
-		DbConnector dbc = new DbConnector();
-		System.out.println(dbc.showpword());
+		
 
 //		try {
 //			
