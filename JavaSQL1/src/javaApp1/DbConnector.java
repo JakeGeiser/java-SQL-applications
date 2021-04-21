@@ -24,7 +24,7 @@ public class DbConnector {
 			System.out.println("Connected");
 			return this.con;
 		}catch(SQLException e) {
-			System.out.println("Issue connection to DB");
+			System.out.println("Issue connecting to DB");
 			return this.con;
 		}
 	}
@@ -42,6 +42,12 @@ public class DbConnector {
 	}
 	
 	// disconnect method
-	
+	public void disconnect() {
+		if (con != null) {
+	        try {
+	            con.close();
+	        } catch (SQLException e) { /* Ignored */}
+	    }
+	}
 
 }
