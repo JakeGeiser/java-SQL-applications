@@ -33,7 +33,9 @@ public class QueryExe {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 			return query;
-		} 
+		} finally {
+			dbc.disconnect();
+		}
 	}
 	
 	// add filter query method
@@ -56,7 +58,9 @@ public class QueryExe {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 			return query;
-		} 
+		} finally {
+			dbc.disconnect();
+		}
 	}
 	
 	// add report query method
@@ -79,7 +83,9 @@ public class QueryExe {
 			// TODO Auto-generated catch block 
 			e.printStackTrace();
 			return query;
-		} 
+		} finally {
+			dbc.disconnect();
+		}
 	}
 }
 
