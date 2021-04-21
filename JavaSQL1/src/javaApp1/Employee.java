@@ -4,10 +4,11 @@ public class Employee {
 	// https://www.tutorialspoint.com/java/java_encapsulation.htm
 	 private int id;
 	 private String name;
-	 private String deptartment;
+	 private String department;
 	 private String role;
 	 private int salary;
 	 
+	 // declare getVariable methods
 	 public int getID() {
 		 return id;
 	 }
@@ -17,7 +18,7 @@ public class Employee {
 	 }
 	 
 	 public String getDepartment() {
-		 return deptartment;
+		 return department;
 	 }
 	 
 	 public String getRole() {
@@ -26,6 +27,27 @@ public class Employee {
 	 
 	 public int getSalary() {
 		 return salary;
+	 }
+	 
+	 // declare setVariable methods
+	 public void setID(int newID) {
+		 id = newID;
+	 }
+	 
+	 public void setName(String newName) {
+		name = newName;
+	 }
+	 
+	 public void setDepartment(String newDept) {
+		 department = newDept;
+	 }
+	 
+	 public void setRole(String newRole) {
+		 role = newRole;
+	 }
+	 
+	 public void setSalary(int newSalary) {
+		 salary = newSalary;
 	 }
 	 
 }
