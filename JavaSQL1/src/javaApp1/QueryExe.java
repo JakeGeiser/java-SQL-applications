@@ -13,8 +13,8 @@ public class QueryExe {
 	// parse the results
 	
 	// add search query method
-	public ArrayList<Object> search(String input) {
-		ArrayList<Object> query = new ArrayList<Object>(); 
+	public ArrayList<ArrayList<Object>> search(String input) {
+		ArrayList<ArrayList<Object>> query = new ArrayList<ArrayList<Object>>(); 
 		try {
 			
 			ResultSet rs = stmt.executeQuery("SELECT id, name, age, department, role, salary FROM employee Where name LIKE'"+input+"%'");
@@ -39,8 +39,8 @@ public class QueryExe {
 	}
 	
 	// add filter query method
-	public ArrayList<Object> filter(String field, String title) {
-		ArrayList<Object> query = new ArrayList<Object>(); 
+	public ArrayList<ArrayList<Object>> filter(String field, String title) {
+		ArrayList<ArrayList<Object>> query = new ArrayList<ArrayList<Object>>();
 		try {
 			ResultSet rs = stmt.executeQuery("SELECT id, name, age, department, role, salary FROM employee Where "+field+" = "+title);
 			while(rs.next()) {
@@ -64,8 +64,8 @@ public class QueryExe {
 	}
 	
 	// add report query method
-	public ArrayList<Object> report() {
-		ArrayList<Object> query = new ArrayList<Object>(); 
+	public ArrayList<ArrayList<Object>> report() {
+		ArrayList<ArrayList<Object>> query = new ArrayList<ArrayList<Object>>();
 		try {
 			
 			ResultSet rs = stmt.executeQuery("SELECT department, MIN(salary), CEIL(AVG(salary)), MAX(salary), CEIL((AVG(salary/12))) FROM employee GROUP BY department");
