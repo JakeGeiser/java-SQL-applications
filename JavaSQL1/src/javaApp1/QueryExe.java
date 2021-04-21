@@ -17,8 +17,8 @@ public class QueryExe {
 		try {
 			ArrayList<Object> query = new ArrayList<Object>(); 
 			ResultSet rs = stmt.executeQuery("SELECT id, name, age, department, role, salary FROM employee Where name LIKE'"+input+"%'");
-			ArrayList<Object> lineQ = new ArrayList<Object>();
 			while(rs.next()) {
+				ArrayList<Object> lineQ = new ArrayList<Object>();
 				lineQ.add(rs.getInt(1));
 				lineQ.add(rs.getString(2));
 				lineQ.add(rs.getInt(3));
@@ -41,8 +41,8 @@ public class QueryExe {
 		try {
 			ArrayList<Object> query = new ArrayList<Object>(); 
 			ResultSet rs = stmt.executeQuery("SELECT id, name, age, department, role, salary FROM employee Where "+field+" = "+title);
-			ArrayList<Object> lineQ = new ArrayList<Object>();
 			while(rs.next()) {
+				ArrayList<Object> lineQ = new ArrayList<Object>();
 				lineQ.add(rs.getInt(1));
 				lineQ.add(rs.getString(2));
 				lineQ.add(rs.getInt(3));
@@ -61,8 +61,26 @@ public class QueryExe {
 	}
 	
 	// add report query method
-	List<Object[]> report() {
-		
+	public ArrayList<Object> report() {
+		try {
+			ArrayList<Object> query = new ArrayList<Object>(); 
+			ResultSet rs = stmt.executeQuery("SELECT department, MIN(salary), CEIL(AVG(salary)), MAX(salary), CEIL((AVG(salary/12))) FROM employee GROUP BY department");
+			while(rs.next()) {
+				ArrayList<Object> lineQ = new ArrayList<Object>();
+				lineQ.add(rs.getString(1));
+				lineQ.add(rs.getInt(2));
+				lineQ.add(rs.getInt(3));
+				lineQ.add(rs.getInt(4));
+				lineQ.add(rs.getInt(5));
+				query.add(lineQ);
+			}
+			return query;
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			ArrayList<Object> query = new ArrayList<Object>(); 
+			e.printStackTrace();
+			return query;
+		} 
 	}
 }
 
