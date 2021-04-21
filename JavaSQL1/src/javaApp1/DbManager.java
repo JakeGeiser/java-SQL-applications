@@ -27,7 +27,7 @@ public class DbManager {
 			}
 			return managerResult;
 		} catch (NumberFormatException e) {
-			System.out.println("Check input if valic");
+			System.out.println("Check input if valid");
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 			return managerResult;
@@ -53,7 +53,7 @@ public class DbManager {
 			}
 			return managerResult;
 		} catch (NumberFormatException e) {
-			System.out.println("Check input if valic");
+			System.out.println("Check input if valid");
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 			return managerResult;
@@ -61,7 +61,7 @@ public class DbManager {
 	}
 
 	public ArrayList<ArrayList<Object>> featureReport(){
-		ArrayList<ArrayList<Object>> queryResult = query.filter(field, title);
+		return query.report();
 	}
 	
 }
