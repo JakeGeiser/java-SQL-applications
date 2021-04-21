@@ -7,7 +7,7 @@ public class Main {
 	public static void main(String[] args) {
 		Scanner scan = new Scanner(System.in);
 		
-		String proceed0 = "yes";
+		boolean proceed0 = true;
 		
 		System.out.println(">>>>>>>>>>>>>>>>>>>>>>>>>");
 		System.out.println("Features");
@@ -19,7 +19,7 @@ public class Main {
 		
 		DbManager manager = new DbManager();
 		
-		while(proceed0=="yes") {
+		while(proceed0) {
 			System.out.println("Select Feature(1,2,3): ");
 			int feature = scan.nextInt();
 			scan.nextLine();
@@ -29,13 +29,49 @@ public class Main {
 				continue;
 			}
 			// proceed to using feature
-			if(feature==1) {
+			while(feature == 1) {
+			
+				// get input
+				System.out.println("Enter name(or what it starts with, ie. Susan, Su, or S): ");
+				String nameIn = scan.nextLine();
+				// use feature search
+				ArrayList<Employee> employees = manager.featureSearch(nameIn);
+				// print out employees
+				System.out.println("");
+				System.out.println("ID | Name (age) | Department | Role | Salary");
+				for( Employee e : employees) {
+					System.out.println(e.getID()+ " | "
+										+ e.getName() + " ("
+										+ e.getAge() + ") | "
+										+ e.getDepartment() + " | "
+										+ e.getRole() + " | "
+										+ e.getSalary());
+				}
+				
+				System.out.println("");
+				System.out.println("Use feature 1 again? (yes/no): ");
+				if (scan.nextLine().equals("yes")) {
+					System.out.println("Using feature 1 again...");
+					System.out.println("");
+					continue;
+				}
+				else {
+					System.out.println("Would you like to use a different feature?");
+					if (scan.nextLine().equals("yes")) {
+						
+					}
+					else {
+						proceed0 = false;
+						break;
+					}
+				}
+			
+			}
+			
+			while(feature==2) {
 				
 			}
-			else if(feature==2) {
-				
-			}
-			else if(feature==3) {
+			if(feature==3) {
 	
 			}
 		}
