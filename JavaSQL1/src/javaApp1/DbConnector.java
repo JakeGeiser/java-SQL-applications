@@ -16,16 +16,16 @@ public class DbConnector {
 	}
 	
 	// connect method
-	private Connection con = null;
+	private static Connection con = null;
 	public Connection connect() {
 		try {
 			System.out.println("Connecting...");
-			this.con = DriverManager.getConnection(url,user,password);
+			con = DriverManager.getConnection(url,user,password);
 			System.out.println("Connected");
-			return this.con;
+			return con;
 		}catch(SQLException e) {
 			System.out.println("Issue connecting to DB");
-			return this.con;
+			return con;
 		}
 	}
 	

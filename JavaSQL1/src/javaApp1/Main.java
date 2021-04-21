@@ -17,8 +17,27 @@ public class Main {
 		System.out.println("3. Report");
 		System.out.println("=========");
 		
+		DbManager manager = new DbManager();
+		
 		while(proceed0=="yes") {
-			
+			System.out.println("Select Feature(1,2,3): ");
+			int feature = scan.nextInt();
+			scan.nextLine();
+			// use valid input checker
+			if(manager.checkFeatureInput(feature) == false) {
+				System.out.println("");
+				continue;
+			}
+			// proceed to using feature
+			if(feature==1) {
+				
+			}
+			else if(feature==2) {
+				
+			}
+			else if(feature==3) {
+	
+			}
 		}
 		
 		
