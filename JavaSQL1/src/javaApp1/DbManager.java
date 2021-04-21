@@ -5,7 +5,7 @@ public class DbManager {
 	// validate input to method, throw error
 	// determines what query to execute
 	// call QueryExecute
-	// build result from results of QueryExecute
+	// build result from results of QueryExe
 	QueryExe query = new QueryExe();
 	
 	public ArrayList<Employee> featureSearch(String name){
@@ -62,6 +62,16 @@ public class DbManager {
 
 	public ArrayList<ArrayList<Object>> featureReport(){
 		return query.report();
+	}
+	
+	public boolean checkFeatureInput(int input) {
+		if (input == 1 || input == 2 || input ==3) {
+			return true;
+		}
+		else {
+			System.out.println("Ensure feature selection is either 1, 2, or 3");
+			return false;
+		}
 	}
 	
 }
