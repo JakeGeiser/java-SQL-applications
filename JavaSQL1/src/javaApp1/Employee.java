@@ -4,6 +4,7 @@ public class Employee {
 	// https://www.tutorialspoint.com/java/java_encapsulation.htm
 	 private int id;
 	 private String name;
+	 private int age;
 	 private String department;
 	 private String role;
 	 private int salary;
@@ -15,6 +16,10 @@ public class Employee {
 	 
 	 public String getName() {
 		 return name;
+	 }
+	 
+	 public int getAge() {
+		 return age;
 	 }
 	 
 	 public String getDepartment() {
@@ -36,6 +41,10 @@ public class Employee {
 	 
 	 public void setName(String newName) {
 		name = newName;
+	 }
+	 
+	 public void setAge(int newAge) {
+		 age = newAge;
 	 }
 	 
 	 public void setDepartment(String newDept) {
