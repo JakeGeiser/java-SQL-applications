@@ -58,7 +58,10 @@ public class Main {
 				else {
 					System.out.println("Would you like to use a different feature?");
 					if (scan.nextLine().equals("yes")) {
-						
+						System.out.println("================================");
+						System.out.println("Enter Feature: ");
+						feature = scan.nextInt();
+						scan.nextLine();
 					}
 					else {
 						proceed0 = false;
@@ -92,13 +95,17 @@ public class Main {
 				System.out.println("Use feature 2 again? (yes/no): ");
 				if (scan.nextLine().equals("yes")) {
 					System.out.println("Using feature 2 again...");
+					System.out.println("============================");
 					System.out.println("");
 					continue;
 				}
 				else {
 					System.out.println("Would you like to use a different feature?");
 					if (scan.nextLine().equals("yes")) {
-						
+						System.out.println("================================");
+						System.out.println("Enter Feature: ");
+						feature = scan.nextInt();
+						scan.nextLine();
 					}
 					else {
 						proceed0 = false;
@@ -109,12 +116,18 @@ public class Main {
 			}
 			if(feature==3) {
 				
-				
-				
-				
-				
-				
-				
+				ArrayList<ArrayList<Object>> report = manager.featureReport();
+				// print out employees
+				System.out.println("");
+				System.out.println("ID | Name (age) | Department | Role | Salary");
+				for( Employee e : employees) {
+					System.out.println(e.getID()+ " | "
+										+ e.getName() + " ("
+										+ e.getAge() + ") | "
+										+ e.getDepartment() + " | "
+										+ e.getRole() + " | "
+										+ e.getSalary());
+				}
 				
 				
 				System.out.println("");
