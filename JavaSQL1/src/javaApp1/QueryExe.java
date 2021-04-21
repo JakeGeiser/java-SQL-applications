@@ -84,13 +84,3 @@ public class QueryExe {
 	}
 }
 
-
-//while(rs.next()) {
-//	int id = rs.getInt(1);
-//	String name = rs.getString(2);
-//	int age = rs.getInt(3);
-//	String dept = rs.getString(4);
-//	String role = rs.getString(5);
-//	int salary = rs.getInt(6);
-//	ArrayList.add(rs);
-//}
