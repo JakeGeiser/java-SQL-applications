@@ -14,8 +14,9 @@ public class QueryExe {
 	
 	// add search query method
 	public ArrayList<Object> search(String input) {
+		ArrayList<Object> query = new ArrayList<Object>(); 
 		try {
-			ArrayList<Object> query = new ArrayList<Object>(); 
+			
 			ResultSet rs = stmt.executeQuery("SELECT id, name, age, department, role, salary FROM employee Where name LIKE'"+input+"%'");
 			while(rs.next()) {
 				ArrayList<Object> lineQ = new ArrayList<Object>();
@@ -30,7 +31,6 @@ public class QueryExe {
 			return query;
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
-			ArrayList<Object> query = new ArrayList<Object>(); 
 			e.printStackTrace();
 			return query;
 		} 
@@ -38,8 +38,8 @@ public class QueryExe {
 	
 	// add filter query method
 	public ArrayList<Object> filter(String field, String title) {
+		ArrayList<Object> query = new ArrayList<Object>(); 
 		try {
-			ArrayList<Object> query = new ArrayList<Object>(); 
 			ResultSet rs = stmt.executeQuery("SELECT id, name, age, department, role, salary FROM employee Where "+field+" = "+title);
 			while(rs.next()) {
 				ArrayList<Object> lineQ = new ArrayList<Object>();
@@ -54,7 +54,6 @@ public class QueryExe {
 			return query;
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
-			ArrayList<Object> query = new ArrayList<Object>(); 
 			e.printStackTrace();
 			return query;
 		} 
@@ -62,8 +61,9 @@ public class QueryExe {
 	
 	// add report query method
 	public ArrayList<Object> report() {
+		ArrayList<Object> query = new ArrayList<Object>(); 
 		try {
-			ArrayList<Object> query = new ArrayList<Object>(); 
+			
 			ResultSet rs = stmt.executeQuery("SELECT department, MIN(salary), CEIL(AVG(salary)), MAX(salary), CEIL((AVG(salary/12))) FROM employee GROUP BY department");
 			while(rs.next()) {
 				ArrayList<Object> lineQ = new ArrayList<Object>();
@@ -76,8 +76,7 @@ public class QueryExe {
 			}
 			return query;
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			ArrayList<Object> query = new ArrayList<Object>(); 
+			// TODO Auto-generated catch block 
 			e.printStackTrace();
 			return query;
 		} 
