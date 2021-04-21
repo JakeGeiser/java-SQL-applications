@@ -9,43 +9,59 @@ public class DbManager {
 	QueryExe query = new QueryExe();
 	
 	public ArrayList<Employee> featureSearch(String name){
-		ArrayList<ArrayList<Object>> queryResult = query.search(name);
 		ArrayList<Employee> managerResult = new ArrayList<Employee>();
 		
-		for (ArrayList<Object> row : queryResult) {
-			// declare a temporary employee object to be added to list
-			Employee tempName = new Employee();
-			tempName.setID(Integer.parseInt(row.get(0).toString()));
-			tempName.setName(row.get(1).toString());
-			tempName.setAge(Integer.parseInt(row.get(2).toString()));
-			tempName.setDepartment(row.get(3).toString());
-			tempName.setRole(row.get(4).toString());
-			tempName.setSalary(Integer.parseInt(row.get(5).toString()));
-			managerResult.add(tempName);
+		try {
+			ArrayList<ArrayList<Object>> queryResult = query.search(name);
+			
+			for (ArrayList<Object> row : queryResult) {
+				// declare a temporary employee object to be added to list
+				Employee tempName = new Employee();
+				tempName.setID(Integer.parseInt(row.get(0).toString()));
+				tempName.setName(row.get(1).toString());
+				tempName.setAge(Integer.parseInt(row.get(2).toString()));
+				tempName.setDepartment(row.get(3).toString());
+				tempName.setRole(row.get(4).toString());
+				tempName.setSalary(Integer.parseInt(row.get(5).toString()));
+				managerResult.add(tempName);
+			}
+			return managerResult;
+		} catch (NumberFormatException e) {
+			System.out.println("Check input if valic");
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			return managerResult;
 		}
-		return managerResult;
 	}
 	
 	public ArrayList<Employee> featureFilter(String field, String title){
-		ArrayList<ArrayList<Object>> queryResult = query.filter(field, title);
 		ArrayList<Employee> managerResult = new ArrayList<Employee>();
 		
-		for (ArrayList<Object> row : queryResult) {
-			// declare a temporary employee object to be added to list
-			Employee tempName = new Employee();
-			tempName.setID(Integer.parseInt(row.get(0).toString()));
-			tempName.setName(row.get(1).toString());
-			tempName.setAge(Integer.parseInt(row.get(2).toString()));
-			tempName.setDepartment(row.get(3).toString());
-			tempName.setRole(row.get(4).toString());
-			tempName.setSalary(Integer.parseInt(row.get(5).toString()));
-			managerResult.add(tempName);
+		ArrayList<ArrayList<Object>> queryResult = query.filter(field, title);
+
+		try {
+			for (ArrayList<Object> row : queryResult) {
+				// declare a temporary employee object to be added to list
+				Employee tempName = new Employee();
+				tempName.setID(Integer.parseInt(row.get(0).toString()));
+				tempName.setName(row.get(1).toString());
+				tempName.setAge(Integer.parseInt(row.get(2).toString()));
+				tempName.setDepartment(row.get(3).toString());
+				tempName.setRole(row.get(4).toString());
+				tempName.setSalary(Integer.parseInt(row.get(5).toString()));
+				managerResult.add(tempName);
+			}
+			return managerResult;
+		} catch (NumberFormatException e) {
+			System.out.println("Check input if valic");
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			return managerResult;
 		}
-		return managerResult;
 	}
 
-	public ArrayList<Employee> featureReport(){
-		
+	public ArrayList<ArrayList<Object>> featureReport(){
+		ArrayList<ArrayList<Object>> queryResult = query.filter(field, title);
 	}
 	
 }
