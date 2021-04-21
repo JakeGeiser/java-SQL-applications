@@ -3,9 +3,9 @@ import java.util.*;
 import java.sql.*;
 
 public class QueryExe {
-	// get connection from DbConnection
+	// connect to DB and get statement from DbConnection
 	DbConnector dbc = new DbConnector();
-	
+	Statement stmt = dbc.state(dbc.connect());
 	
 	
 	// build SQL query
