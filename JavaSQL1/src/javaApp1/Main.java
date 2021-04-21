@@ -119,14 +119,13 @@ public class Main {
 				ArrayList<ArrayList<Object>> report = manager.featureReport();
 				// print out employees
 				System.out.println("");
-				System.out.println("ID | Name (age) | Department | Role | Salary");
-				for( Employee e : employees) {
-					System.out.println(e.getID()+ " | "
-										+ e.getName() + " ("
-										+ e.getAge() + ") | "
-										+ e.getDepartment() + " | "
-										+ e.getRole() + " | "
-										+ e.getSalary());
+				System.out.println("Department | Minimum | Average | Maximum | Montly Average");
+				for( ArrayList<Object> row : report) {
+					System.out.println(row.get(0)+ " | "
+										+ row.get(1) + " | "
+										+ row.get(2) + " | "
+										+ row.get(3) + " | "
+										+ row.get(4));
 				}
 				
 				
