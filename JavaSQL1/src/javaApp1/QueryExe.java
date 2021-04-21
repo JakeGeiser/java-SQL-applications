@@ -25,7 +25,7 @@ public class QueryExe {
 				lineQ.add(rs.getString(4));
 				lineQ.add(rs.getString(5));
 				lineQ.add(rs.getInt(6));
-				ArrayList.add(lineQ);
+				query.add(lineQ);
 			}
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
