@@ -1,0 +1,10 @@
+package javaApp1;
+
+public class Config {
+	private String password = "DATABASE_PASSWORD_HERE";
+	
+	public String password() {
+		return this.password;
+	}
+
+}
