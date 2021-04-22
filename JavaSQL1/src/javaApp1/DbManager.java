@@ -79,7 +79,9 @@ public class DbManager {
 	
 	public void disconnect() {
 		DbConnector dbc = new DbConnector();
+		System.out.println("Disconnecting...");
 		dbc.disconnect();
+		System.out.println("Disconnected!");
 	}
 	
 }

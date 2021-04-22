@@ -39,6 +39,7 @@ public class Main {
 				// print out employees
 				System.out.println("");
 				System.out.println("ID | Name (age) | Department | Role | Salary");
+				System.out.println("____________________________________________");
 				for( Employee e : employees) {
 					System.out.println(e.getID()+ " | "
 										+ e.getName() + " ("
@@ -56,7 +57,7 @@ public class Main {
 					continue;
 				}
 				else {
-					System.out.println("Would you like to use a different feature?");
+					System.out.println("Would you like to use a different feature? (yes/no)");
 					if (scan.nextLine().equals("yes")) {
 						System.out.println("================================");
 						System.out.println("Enter Feature: ");
@@ -83,6 +84,7 @@ public class Main {
 				// print out employees
 				System.out.println("");
 				System.out.println("ID | Name (age) | Department | Role | Salary");
+				System.out.println("____________________________________________");
 				for( Employee e : employees) {
 					System.out.println(e.getID()+ " | "
 										+ e.getName() + " ("
@@ -101,7 +103,7 @@ public class Main {
 					continue;
 				}
 				else {
-					System.out.println("Would you like to use a different feature?");
+					System.out.println("Would you like to use a different feature? (yes/no)");
 					if (scan.nextLine().equals("yes")) {
 						System.out.println("================================");
 						System.out.println("Enter Feature: ");
@@ -122,6 +124,7 @@ public class Main {
 				// print out employees
 				System.out.println("");
 				System.out.println("Department | Minimum | Average | Maximum | Montly Average");
+				System.out.println("_________________________________________________________");
 				for( ArrayList<Object> row : report) {
 					System.out.println(row.get(0)+ " | "
 										+ row.get(1) + " | "
@@ -132,7 +135,7 @@ public class Main {
 				
 				
 				System.out.println("");
-				System.out.println("Would you like to use a different feature?");
+				System.out.println("Would you like to use a different feature? (yes/no)");
 				if (scan.nextLine().equals("yes")) {
 					
 				}
@@ -146,7 +149,6 @@ public class Main {
 			
 			
 		}
-		
 		
 		
 		scan.close();

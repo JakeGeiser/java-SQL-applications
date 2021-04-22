@@ -40,7 +40,7 @@ public class QueryExe {
 	public ArrayList<ArrayList<Object>> filter(String field, String title) {
 		ArrayList<ArrayList<Object>> query = new ArrayList<ArrayList<Object>>();
 		try {
-			ResultSet rs = stmt.executeQuery("SELECT id, name, age, department, role, salary FROM employee Where "+field+" = "+title);
+			ResultSet rs = stmt.executeQuery("SELECT id, name, age, department, role, salary FROM employee WHERE "+field+" = '"+title+"'");
 			while(rs.next()) {
 				ArrayList<Object> lineQ = new ArrayList<Object>();
 				lineQ.add(rs.getInt(1));
