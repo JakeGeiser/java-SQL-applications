@@ -1,0 +1,14 @@
+drop table employee ;
+
+
+CREATE TABLE employee (
+	id serial NOT NULL,
+	"name" varchar NOT NULL,
+	gender char(1) NOT NULL,
+	age int NULL,
+	"location" varchar NULL,
+	department varchar NULL,
+	"role" varchar NULL,
+	join_date date NULL,
+	salary int NULL
+);
